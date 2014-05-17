@@ -38,8 +38,20 @@ function uniq(el, arr){
 
 function selector(el){
   var i = index(el);
+
   return el.tagName.toLowerCase()
     + (el.id ? '#' + el.id : '')
-    + (el.className ? el.className.replace(/^| +/g, '.') : '')
+    + className(el)
     + (~i ? ':nth-child(' + (i + 1) + ')' : '');
+}
+
+/**
+ * Generate a string representation of the className for `el`.
+ *
+ * @param {Element} el
+ * @return {String}
+ */
+
+function className(el){
+  return el.className ? el.className.trim().replace(/ +$/g, '').replace(/^| +/g, '.') : '';
 }
