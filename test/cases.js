@@ -29,3 +29,12 @@ cases.push({
   expect: 'i#foo.foo.button:nth-child(1) > i:nth-child(1) > i:nth-child(1) > i.baz:nth-child(1)',
   selector: '.baz'
 });
+
+// with trailing space in className
+
+cases.push({
+  element: '<i>',
+  of: '<p class=" foo bar "><i></i></p>',
+  expect: 'p.foo.bar > i:nth-child(1)',
+  selector: 'i'
+});
