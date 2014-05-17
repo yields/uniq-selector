@@ -4,7 +4,6 @@
  */
 
 var index = require('indexof');
-var id = function(_){ return _ };
 
 /**
  * Export `uniq`
