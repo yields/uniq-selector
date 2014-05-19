@@ -1,9 +1,10 @@
 
 /**
- * dependencies
+ * Module dependencies.
  */
 
 var index = require('indexof');
+var trim = require('trim');
 
 /**
  * Export `uniq`
@@ -34,24 +35,15 @@ function uniq(el, arr){
  *
  * @param {Element} el
  * @return {String}
+ * @api private
  */
 
 function selector(el){
+  var classname = trim(el.className);
   var i = index(el);
 
   return el.tagName.toLowerCase()
     + (el.id ? '#' + el.id : '')
-    + className(el)
+    + (classname ? classname.replace(/^| +/g, '.') : '')
     + (~i ? ':nth-child(' + (i + 1) + ')' : '');
-}
-
-/**
- * Generate a string representation of the className for `el`.
- *
- * @param {Element} el
- * @return {String}
- */
-
-function className(el){
-  return el.className ? el.className.trim().replace(/ +$/g, '').replace(/^| +/g, '.') : '';
 }
