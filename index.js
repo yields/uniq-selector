@@ -21,7 +21,7 @@ module.exports = uniq;
  */
 
 function uniq(el, arr){
-  arr = arr || [];
+  arr = arr instanceof Array ? arr : [];
   if (!el) return arr.join(' > ');
   arr.unshift(selector(el));
   if (el.id) return arr.join(' > ');
