@@ -13,4 +13,14 @@ cases.forEach(function(test){
       assert(el == html.querySelector(ret), 'expected "' + ret + '" to get "' + test.element + '"');
     })
   })
+
+  describe('[' + test.element + '].map(uniq)', function(){
+    it('should return "' + test.expect + '" of "' + test.of + '"', function(){
+      var html = domify(test.of);
+      var els = [].slice.call(html.querySelectorAll(test.selector));
+      var ret = els.map(uniq)[0];
+      assert(test.expect == ret, 'expected "' + test.expect + '" got "' + ret + '"');
+      assert(els[0] == html.querySelector(ret), 'expected "' + ret + '" to get "' + test.element + '"');
+    })
+  });
 })
