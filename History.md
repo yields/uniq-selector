@@ -1,4 +1,10 @@
 
+0.2.0 / 2014-05-22 
+==================
+
+ * support svg elements, check arrays with arr.join [olivoil]
+ * add support for [].map(uniq) [olivoil]
+
 0.1.0 / 2014-05-19 
 ==================
 
