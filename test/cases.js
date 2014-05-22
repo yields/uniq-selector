@@ -38,3 +38,12 @@ cases.push({
   expect: 'p.foo.bar > i:nth-child(1)',
   selector: 'i'
 });
+
+// works on svg elements
+
+cases.push({
+  element: '<svg class=" foo bar ">',
+  of: '<div><svg class=" foo bar "></svg></p>',
+  expect: 'div > svg.foo.bar:nth-child(1)',
+  selector: 'svg'
+});

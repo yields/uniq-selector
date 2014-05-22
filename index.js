@@ -21,7 +21,7 @@ module.exports = uniq;
  */
 
 function uniq(el, arr){
-  arr = arr instanceof Array ? arr : [];
+  arr = arr && arr.join ? arr : [];
   if (!el) return arr.join(' > ');
   arr.unshift(selector(el));
   if (el.id) return arr.join(' > ');
@@ -39,7 +39,7 @@ function uniq(el, arr){
  */
 
 function selector(el){
-  var classname = trim(el.className);
+  var classname = trim(el.className.baseVal ? el.className.baseVal : el.className);
   var i = index(el);
 
   return el.tagName.toLowerCase()
