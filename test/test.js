@@ -24,3 +24,11 @@ cases.forEach(function(test){
     })
   });
 })
+
+describe('uniq(attached element)', function(){
+  it('should work', function(){
+    var el = document.createElement('div');
+    document.body.appendChild(el);
+    uniq(el);
+  })
+});

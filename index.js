@@ -23,10 +23,10 @@ module.exports = uniq;
 function uniq(el, arr){
   arr = arr && arr.join ? arr : [];
   if (!el) return arr.join(' > ');
-  arr.unshift(selector(el));
-  if (el.id) return arr.join(' > ');
   if (9 == el.nodeType) return arr.join(' > ');
   if (1 != el.nodeType) return arr.join(' > ');
+  arr.unshift(selector(el));
+  if (el.id) return arr.join(' > ');
   return uniq(el.parentNode, arr);
 }
 
