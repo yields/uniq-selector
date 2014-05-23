@@ -1,4 +1,10 @@
 
+0.2.1 / 2014-05-23 
+==================
+
+ * index: Fix attached elements [stephenmathieson]
+ * test: Fix icons [stephenmathieson]
+
 0.2.0 / 2014-05-22 
 ==================
 
