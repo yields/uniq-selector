@@ -39,11 +39,25 @@ function uniq(el, arr){
  */
 
 function selector(el){
-  var classname = trim(el.className.baseVal ? el.className.baseVal : el.className);
   var i = index(el);
 
   return el.tagName.toLowerCase()
     + (el.id ? '#' + el.id : '')
-    + (classname ? classname.replace(/^| +/g, '.') : '')
+    + classname(el)
     + (~i ? ':nth-child(' + (i + 1) + ')' : '');
+}
+
+/**
+ * Retrieve element classname
+ * Escape brackets and replace spaces with dots
+ *
+ * @param  {Element} el
+ * @return {String}
+ * @api private
+ */
+
+function classname(el){
+  var classname = trim(el.className.baseVal ? el.className.baseVal : el.className);
+
+  return classname ? classname.replace('[', '\\[').replace(']', '\\]').classname.replace(/^| +/g, '.') : '';
 }
