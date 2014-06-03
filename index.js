@@ -57,7 +57,7 @@ function selector(el){
  */
 
 function id(el){
-  return el.id ? '#' + escapeSelector(el.id) : '';
+  return el.getAttribute('id') ? '#' + escapeSelector(el.getAttribute('id')) : '';
 }
 
 /**
