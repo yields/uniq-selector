@@ -42,14 +42,42 @@ function selector(el){
   var i = index(el);
 
   return el.tagName.toLowerCase()
-    + (el.id ? '#' + el.id : '')
+    + id(el)
     + classname(el)
     + (~i ? ':nth-child(' + (i + 1) + ')' : '');
 }
 
 /**
+ * Retrieve element id
+ * Escape id selector and append #
+ *
+ * @param  {Element} el
+ * @return {String}
+ * @api private
+ */
+
+function id(el){
+  return el.id ? '#' + escapeSelector(el.id) : '';
+}
+
+/**
+ * Escape selector as per w3 spec.
+ *
+ * @param  {String} sel selector to escape
+ * @return {String}
+ * @api private
+ */
+
+function escapeSelector(sel){
+  //Based on the stackoverflow answer and w3 spec
+  //http://stackoverflow.com/questions/2786538/need-to-escape-a-special-character-in-a-jquery-selector-string
+  return sel ? sel.replace(/[!"#$%&'()*+,.\/:;<=>?@[\\\]^`{|}~]/g, "\\$&") : '';
+
+}
+
+/**
  * Retrieve element classname
- * Escape brackets and replace spaces with dots
+ * Escape selector and replace spaces with dots
  *
  * @param  {Element} el
  * @return {String}
@@ -59,5 +87,5 @@ function selector(el){
 function classname(el){
   var classname = trim(el.className.baseVal ? el.className.baseVal : el.className);
 
-  return classname ? classname.replace('[', '\\[').replace(']', '\\]').replace(/^| +/g, '.') : '';
+  return classname ? escapeSelector(classname).replace(/^| +/g, '.') : '';
 }
