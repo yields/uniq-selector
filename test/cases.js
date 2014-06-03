@@ -47,3 +47,12 @@ cases.push({
   expect: 'div > svg.foo.bar:nth-child(1)',
   selector: 'svg'
 });
+
+// escape brackets in className
+
+cases.push({
+  element: '<p class="foo[bar]"',
+  of: '<p class="foo[bar]"><i></i></p>',
+  expect: 'p.foo\\[bar\\] > i:nth-child(1)',
+  selector: 'i'
+});
