@@ -59,5 +59,5 @@ function selector(el){
 function classname(el){
   var classname = trim(el.className.baseVal ? el.className.baseVal : el.className);
 
-  return classname ? classname.replace('[', '\\[').replace(']', '\\]').classname.replace(/^| +/g, '.') : '';
+  return classname ? classname.replace('[', '\\[').replace(']', '\\]').replace(/^| +/g, '.') : '';
 }
