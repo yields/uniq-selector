@@ -39,5 +39,6 @@ describe('document.querySelector(uniq(el))', function(){
     document.body.appendChild(el);
     var found = document.querySelector(uniq(el));
     assert(found, 'document.querySelector(uniq(el)) did not return `el`.');
+    el.parentNode.removeChild(el);
   })
 });
