@@ -40,7 +40,7 @@ function uniq(el, arr){
 
 function selector(el){
   var classname = trim(el.className.baseVal ? el.className.baseVal : el.className);
-  var i = index(el);
+  var i = el.parentNode && 9 == el.parentNode.nodeType ? -1 : index(el);
 
   return el.tagName.toLowerCase()
     + (el.id ? '#' + el.id : '')

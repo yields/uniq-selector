@@ -32,3 +32,12 @@ describe('uniq(attached element)', function(){
     uniq(el);
   })
 });
+
+describe('document.querySelector(uniq(el))', function(){
+  it('should return a selectable string', function(){
+    var el = document.createElement('div');
+    document.body.appendChild(el);
+    var found = document.querySelector(uniq(el));
+    assert(found, 'document.querySelector(uniq(el)) did not return `el`.');
+  })
+});
