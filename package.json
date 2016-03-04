@@ -1,0 +1,32 @@
+{
+  "name": "uniq-selector",
+  "version": "0.2.2",
+  "description": "generate a uniq selector of the given element.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yields/uniq-selector.git"
+  },
+  "keywords": [
+    "selector",
+    "uniq",
+    "css",
+    "path"
+  ],
+  "author": "yields",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yields/uniq-selector/issues"
+  },
+  "homepage": "https://github.com/yields/uniq-selector#readme",
+  "dependencies": {
+    "indexof-element": "1.0.1",
+    "trim": "0.0.1"
+  }
+}
