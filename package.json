@@ -1,6 +1,6 @@
 {
   "name": "uniq-selector",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "generate a uniq selector of the given element.",
   "main": "index.js",
   "directories": {
@@ -28,5 +28,8 @@
   "dependencies": {
     "indexof-element": "1.0.1",
     "trim": "0.0.1"
+  },
+  "browser": {
+    "indexof": "indexof-element"
   }
 }
