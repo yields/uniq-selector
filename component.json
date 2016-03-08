@@ -3,7 +3,7 @@
   "remotes": ["https://raw.githubusercontent.com/"],
   "repo": "yields/uniq-selector",
   "description": "generate a uniq selector of the given element.",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "keywords": ["selector", "uniq", "css", "path"],
   "license": "MIT",
   "main": "index.js",
